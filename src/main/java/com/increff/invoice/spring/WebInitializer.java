@@ -1,4 +1,4 @@
-package org.spring;
+package com.increff.invoice.spring;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

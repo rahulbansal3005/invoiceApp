@@ -1,4 +1,4 @@
-package org.spring;
+package com.increff.invoice.spring;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
