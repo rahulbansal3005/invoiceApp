@@ -32,7 +32,7 @@ import java.util.Collections;
 @EnableSwagger2
 public class ControllerConfig extends WebMvcConfigurerAdapter {
 
-	public static final String PACKAGE_CONTROLLER = "org.controller";
+	public static final String PACKAGE_CONTROLLER = "com.increff.invoice.controller";
 
 
 	private ApplicationContext applicationContext;
