@@ -23,9 +23,9 @@
                             <fo:table-body>
                                 <fo:table-row font-size="18pt" line-height="30px" background-color="#1f6a9c" color="white" font-weight = "bold">
                                     <fo:table-cell padding-left="5pt">
-                                        <fo:block>
-                                            <fo:external-graphic  src="url(file:///D:/Work Space/IncreffProjects/pos_project/apache_fop/src/main/resources/logo.png)" content-height="scale-to-fit" height="50px"  content-width="2.00in" scaling="non-uniform"/>
-                                        </fo:block>
+<!--                                        <fo:block>-->
+<!--                                            <fo:external-graphic  src="url(file:///D:/Work Space/IncreffProjects/pos_project/apache_fop/src/main/resources/logo.png)" content-height="scale-to-fit" height="50px"  content-width="2.00in" scaling="non-uniform"/>-->
+<!--                                        </fo:block>-->
                                     </fo:table-cell>
 
                                     <fo:table-cell>

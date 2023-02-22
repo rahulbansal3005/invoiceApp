@@ -6,5 +6,6 @@ com\increff\invoice\spring\SpringConfig.class
 com\increff\invoice\model\PdfListData.class
 com\increff\invoice\controller\PdfApiController.class
 com\increff\invoice\service\ApiException.class
+com\increff\invoice\spring\DbConfig.class
 com\increff\invoice\dto\PdfDto.class
 com\increff\invoice\util\Invoice\JavaToXML.class

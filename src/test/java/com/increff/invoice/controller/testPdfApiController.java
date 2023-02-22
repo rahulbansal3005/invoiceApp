@@ -20,7 +20,6 @@ public class testPdfApiController extends AbstractUnitTest {
     @Test
     public void testInvoice() throws Exception {
 
-//        Assert.assertEquals(1,1);
         PdfData pdfData=new PdfData();
         DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formattedDate = LocalDateTime.now().format(date);

@@ -39,15 +39,15 @@ public class JavaToXML {
 
             //invoice elements
             Element invoiceNumber = document.createElement("invoicenumber");
-            invoiceNumber.appendChild(document.createTextNode(""+d.getOrderId()));
+            invoiceNumber.appendChild(document.createTextNode("" + d.getOrderId()));
             root.appendChild(invoiceNumber);
 
             Element invoiceDate = document.createElement("invoicedate");
-            invoiceDate.appendChild(document.createTextNode(""+d.getInvoiceDate()));
+            invoiceDate.appendChild(document.createTextNode("" + d.getInvoiceDate()));
             root.appendChild(invoiceDate);
 
             Element invoiceTime = document.createElement("invoicetime");
-            invoiceTime.appendChild(document.createTextNode(""+d.getInvoiceTime()));
+            invoiceTime.appendChild(document.createTextNode("" + d.getInvoiceTime()));
             root.appendChild(invoiceTime);
 
             //address element
@@ -84,40 +84,40 @@ public class JavaToXML {
 
             root.appendChild(lineitems);
 
-            for(PdfListData l : d.getItemList()){
+            for (PdfListData l : d.getItemList()) {
                 Element lineitem = document.createElement("lineitem");
 
                 lineitems.appendChild(lineitem);
 
                 // create lineitems sub element
                 Element sno = document.createElement("sno");
-                sno.appendChild(document.createTextNode(""+l.getSno()));
+                sno.appendChild(document.createTextNode("" + l.getSno()));
                 lineitem.appendChild(sno);
 
                 Element barcode = document.createElement("barcode");
-                barcode.appendChild(document.createTextNode(""+l.getBarcode()));
+                barcode.appendChild(document.createTextNode("" + l.getBarcode()));
                 lineitem.appendChild(barcode);
 
                 Element qty = document.createElement("quantity");
-                qty.appendChild(document.createTextNode(""+l.getQuantity()));
+                qty.appendChild(document.createTextNode("" + l.getQuantity()));
                 lineitem.appendChild(qty);
 
                 Element desc = document.createElement("product");
-                desc.appendChild(document.createTextNode(""+l.getProduct()));
+                desc.appendChild(document.createTextNode("" + l.getProduct()));
                 lineitem.appendChild(desc);
 
                 Element unitPrice = document.createElement("unitprice");
-                unitPrice.appendChild(document.createTextNode(""+l.getUnitPrice()));
+                unitPrice.appendChild(document.createTextNode("" + l.getUnitPrice()));
                 lineitem.appendChild(unitPrice);
 
                 Element amount = document.createElement("amount");
-                amount.appendChild(document.createTextNode(""+l.getAmount()));
+                amount.appendChild(document.createTextNode("" + l.getAmount()));
                 lineitem.appendChild(amount);
 
             }
 
             Element total = document.createElement("total");
-            total.appendChild(document.createTextNode(""+d.getTotal()));
+            total.appendChild(document.createTextNode("" + d.getTotal()));
             root.appendChild(total);
 
 
@@ -129,7 +129,7 @@ public class JavaToXML {
 //            StreamResult streamResult = new StreamResult(new File(xmlFilePath));
             File file = new File(xmlFilePath);
             final StreamResult streamResult = new StreamResult(file.toURI().getPath());
-
+//            StreamResult streamResult = new StreamResult(new File("src/main/resources/invoice.xml"));
             // If you use
             // StreamResult result = new StreamResult(System.out);
             // the output will be pushed to the standard output ...
@@ -138,11 +138,14 @@ public class JavaToXML {
             transformer.transform(domSource, streamResult);
 
             System.out.println("Done creating XML File");
-
-        } catch (ParserConfigurationException pce) {
-            pce.printStackTrace();
-        } catch (TransformerException tfe) {
-            tfe.printStackTrace();
         }
+//        } catch (ParserConfigurationException pce) {
+//            pce.printStackTrace();
+//        } catch (TransformerException tfe) {
+//            tfe.printStackTrace();
+//        }
+            catch(Exception e){
+            e.printStackTrace();
+            }
     }
 }
