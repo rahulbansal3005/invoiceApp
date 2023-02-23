@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+                exclude-result-prefixes="msxsl"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.w3.org/1999/XSL/Format ">
     <xsl:output method="xml" indent="yes"/>
     <xsl:template match="/">
         <fo:root>
             <fo:layout-master-set>
-                <fo:simple-page-master master-name="A4" page-height="29.7cm" page-width="21.0cm" margin-top="1cm" margin-left="2cm" margin-right="2cm" margin-bottom="1cm">
+                <fo:simple-page-master master-name="A4" page-height="29.7cm" page-width="21.0cm" margin-top="1cm"
+                                       margin-left="2cm" margin-right="2cm" margin-bottom="1cm">
                     <!-- Page template goes here -->
-                    <fo:region-body />
+                    <fo:region-body/>
                     <fo:region-before region-name="xsl-region-before" extent="3cm"/>
                     <fo:region-after region-name="xsl-region-after" extent="4cm"/>
 
@@ -21,11 +26,12 @@
                             <fo:table-column column-width="9cm"/>
                             <fo:table-column column-width="8cm"/>
                             <fo:table-body>
-                                <fo:table-row font-size="18pt" line-height="30px" background-color="#1f6a9c" color="white" font-weight = "bold">
+                                <fo:table-row font-size="18pt" line-height="30px" background-color="#1f6a9c"
+                                              color="white" font-weight="bold">
                                     <fo:table-cell padding-left="5pt">
-<!--                                        <fo:block>-->
-<!--                                            <fo:external-graphic  src="url(file:///D:/Work Space/IncreffProjects/pos_project/apache_fop/src/main/resources/logo.png)" content-height="scale-to-fit" height="50px"  content-width="2.00in" scaling="non-uniform"/>-->
-<!--                                        </fo:block>-->
+                                        <fo:block>
+                                            <!--                                            <fo:external-graphic  src="url(file:///D:/Work Space/IncreffProjects/pos_project/apache_fop/src/main/resources/logo.png)" content-height="scale-to-fit" height="50px"  content-width="2.00in" scaling="non-uniform"/>-->
+                                        </fo:block>
                                     </fo:table-cell>
 
                                     <fo:table-cell>
@@ -47,7 +53,7 @@
                     </fo:block>
                 </fo:static-content>
                 <fo:flow flow-name="xsl-region-body" line-height="20pt">
-                    <xsl:apply-templates />
+                    <xsl:apply-templates/>
                 </fo:flow>
             </fo:page-sequence>
         </fo:root>
@@ -57,8 +63,8 @@
         <fo:block>
 
         </fo:block>
-        <fo:block space-before="120pt" width="17cm" >
-            <fo:table >
+        <fo:block space-before="120pt" width="17cm">
+            <fo:table>
                 <fo:table-column column-width="6.5cm"/>
 
                 <fo:table-column column-width="7cm"/>
@@ -129,9 +135,10 @@
                         <fo:table-cell number-columns-spanned="5" text-align="right" padding-right="3pt">
                             <fo:block>Total</fo:block>
                         </fo:table-cell>
-                        <fo:table-cell  text-align="right" padding-right="3pt" background-color="#f5f5f5" border="1px solid #b8b6b6" >
+                        <fo:table-cell text-align="right" padding-right="3pt" background-color="#f5f5f5"
+                                       border="1px solid #b8b6b6">
                             <fo:block>
-                                <xsl:value-of select="total" />
+                                <xsl:value-of select="total"/>
                             </fo:block>
                         </fo:table-cell>
                     </fo:table-row>
@@ -142,10 +149,10 @@
     <xsl:template name="address">
         <xsl:param name="address"></xsl:param>
         <fo:block>
-            <xsl:value-of select="$address/name" />&#x2028;
-            <xsl:value-of select="$address/building" />&#x2028;
-            <xsl:value-of select="$address/area" />&#160;
-            <xsl:value-of select="$address/city" />
+            <xsl:value-of select="$address/name"/>&#x2028;
+            <xsl:value-of select="$address/building"/>&#x2028;
+            <xsl:value-of select="$address/area"/>&#160;
+            <xsl:value-of select="$address/city"/>
         </fo:block>
     </xsl:template>
     <xsl:template match="lineitem">
